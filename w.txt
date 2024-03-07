@@ -1,0 +1,113 @@
+npm i express
+nmp i dotenv
+npm i mongoose@5
+npm i morgan
+npm i slugify
+npm i validator
+npm i bcryptjs
+npm i jsonwebtoken
+npm i nodemailer
+npm i express-rate-limit
+npm i helmet
+npm i express-mongo-sanitize
+npm i xss-clean // deprecated
+npm i hpp
+npm i pug
+npm i cookie-parser
+npm i axios
+npm i @babel/polyfill
+npm i multer
+npm i sharp
+npm i html-to-text
+npm i stripe
+
+npm i nodemon
+npm i ndb --save-dev
+npm i parcel-bundler --save-dev
+
+npm i eslint
+      prettier 
+      eslint-config-prettier
+      eslint-plugin-prettier
+      eslint-config-airbnb
+      eslint-plugin-node
+      eslint-plugin-import
+      eslint-plugin-jsx-a11y
+      eslint-plugin-react
+
+----------------------------------------
+use tours --- create, switch
+
+show dbs
+show collections
+
+R
+db.tours.insertOne({ name: "The Forest Hiker", price: 297, rating: 4.7 })
+db.tours.insertMany([{}, {}])
+
+Q
+db tours.find() --- all
+db.tours.find({ name: "The Forest Hiker" })
+db.tours.find({ price: {$lte: 500} }) --- les than or equal
+db.tours.find({ price: {$lt: 500} }, rating: {$gte: 4.8 }) --- les than, greater than or equal (and query)
+db.tours.find( {$or: [ {price: {$lt: 500}}, {rating: {$gte: 4.8 }} ]}, {name: 1} ) --- (or query)
+
+U
+db.tours.updateOne( { nam: "The Snow Adventurer" }, { $set: { price: 597 } }) --- set operator
+db.tours.updateMany( { nam: "The Snow Adventurer" }, { $set: { price: 597 } }) --- set operator to all
+db.tours.replaceMany( ... ) --- replace all documents with
+
+D
+db.tours.deleteOne()
+db.tours.deleteMany( {} ) --- delete all documents
+
+----------------------------------------
+"prettier/prettier": [
+  "error",
+  {
+    "endOfLine": "auto"
+  }
+],
+----------------------------------------
+node .\dev-data\data\import-dev-data.js --delete
+
+this part comment in userModel!!!
+
+userSchema.pre('save', async function (next) {
+  // Only run this function if password was actually modified
+  if (!this.isModified('password')) return next();
+  // Hash the password with cost of 12
+  this.password = await bcrypt.hash(this.password, 12);
+  // Delete passwordConfirm field
+  this.passwordConfirm = undefined;
+
+  next();
+});
+
+userSchema.pre('save', function (next) {
+  if (!this.isModified('password') || this.isNew) return next();
+
+  this.passwordChangedAt = Date.now() - 1000;
+  next();
+});
+----------------------------------------
+
+----------------------------------------
+IN bundle.js manually !!!!!!!!!!
+//# sourceMappingURL=/js/bundle.js.map
+----------------------------------------
+
+----------------------------------------
+"html-to-text": "^6.0.0", !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+----------------------------------------
+
+----------------------------------------
+git init
+
+.gitignore
+
+git status
+
+git add -A
+
+delete .cache folder
