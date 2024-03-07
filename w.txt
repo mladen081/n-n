@@ -20,6 +20,7 @@ npm i multer
 npm i sharp
 npm i html-to-text
 npm i stripe
+npm i compression
 
 npm i nodemon
 npm i ndb --save-dev
