@@ -111,3 +111,9 @@ git status
 git add -A
 
 delete .cache folder
+
+git commit -m "Initial commit"
+
+git remote add origin https://github.com/mladen081/n-n.git
+
+git push origin master
